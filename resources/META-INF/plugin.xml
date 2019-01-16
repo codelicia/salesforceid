@@ -1,18 +1,21 @@
 <idea-plugin>
-  <id>com.malukenho.saleforceid</id>
-  <name>Salesforce Id Converter</name>
-  <version>1.0</version>
-  <vendor email="malukenho.dev@gmail.com" url="http://github.com/malukenho">Jeferson Nathan</vendor>
+    <id>com.malukenho.saleforceid</id>
+    <name>Salesforce Id Converter</name>
+    <version>1.0</version>
+    <vendor email="malukenho.dev@gmail.com" url="http://github.com/malukenho">Jeferson Nathan</vendor>
 
-  <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.platform</depends>
 
-  <description>It generates 18 digits IDs from 15 Salesforce Id.</description>
+    <description>It generates 18 digits IDs from 15 Salesforce Id.</description>
 
-  <idea-version since-build="173.0"/>
+    <idea-version since-build="173.0"/>
 
     <actions>
-        <action id="Salesforce ID Converter" class="com.malukenho.saleforceid.ShowDialog" text="Salesforce ID Converter" description="Converts salesforce ids">
-            <keyboard-shortcut first-keystroke="control alt y" keymap="$default"/>
+        <action id="Salesforce ID Converter"
+                class="com.malukenho.saleforceid.ShowDialog"
+                text="Salesforce ID Converter"
+                description="Converts salesforce ids">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt S" />
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>
