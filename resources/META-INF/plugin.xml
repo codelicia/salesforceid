@@ -1,0 +1,14 @@
+<idea-plugin>
+  <id>com.malukenho.saleforceid</id>
+  <name>Salesforce Id Converter</name>
+  <version>1.0</version>
+  <vendor email="malukenho.dev@gmail.com" url="http://github.com/malukenho">Jeferson Nathan</vendor>
+
+  <description>It generates 18 digits IDs from 15 Salesforce Id.</description>
+
+  <idea-version since-build="173.0"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+      <toolWindow id="Salesforce ID" anchor="bottom" order="first" factoryClass="com.malukenho.saleforceid.ToolIdGeneratorFactory" />
+  </extensions>
+</idea-plugin>
