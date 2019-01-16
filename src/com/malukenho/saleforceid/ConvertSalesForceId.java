@@ -1,6 +1,6 @@
 package com.malukenho.saleforceid;
 
-public class ConvertSalesForceId {
+class ConvertSalesForceId {
 
     static String convertTo18CharId(String original15charId) {
 

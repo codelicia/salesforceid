@@ -10,7 +10,10 @@
 
   <idea-version since-build="173.0"/>
 
-  <extensions defaultExtensionNs="com.intellij">
-      <toolWindow id="Salesforce ID" anchor="bottom" order="first" factoryClass="com.malukenho.saleforceid.ToolIdGeneratorFactory" />
-  </extensions>
+    <actions>
+        <action id="Salesforce ID Converter" class="com.malukenho.saleforceid.ShowDialog" text="Salesforce ID Converter" description="Converts salesforce ids">
+            <keyboard-shortcut first-keystroke="control alt y" keymap="$default"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

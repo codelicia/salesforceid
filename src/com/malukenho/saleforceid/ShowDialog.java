@@ -1,17 +1,36 @@
 package com.malukenho.saleforceid;
 
-import com.intellij.openapi.ui.SimpleToolWindowPanel;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 
-public class ToolIdGeneratorPanel extends SimpleToolWindowPanel {
+public class ShowDialog extends AnAction {
+    @Override
+    public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
 
-    public ToolIdGeneratorPanel() {
-        super(true);
+        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(anActionEvent.getProject());
+        JComponent ideFrameComponent = ideFrame.getComponent();
 
+        Point middle = new Point(
+                (ideFrameComponent.getWidth() - 350) / 2,
+                (ideFrameComponent.getHeight() - 100) / 2
+        );
+
+        JDialog dialog = new JDialog();
+        dialog.setContentPane(mount());
+        dialog.setSize(350, 100);
+        dialog.setLocation(middle);
+        dialog.setVisible(true);
+    }
+
+    private static JPanel mount() {
         JPanel container = new JPanel(new BorderLayout());
 
         JPanel mainPanel = new JPanel();
@@ -29,6 +48,7 @@ public class ToolIdGeneratorPanel extends SimpleToolWindowPanel {
         final JTextField decodedField = new JTextField(10);
         line2.add(decodedField);
 
+        // @TODO remove duplication
         encodedField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -49,12 +69,8 @@ public class ToolIdGeneratorPanel extends SimpleToolWindowPanel {
         mainPanel.add(line1);
         mainPanel.add(line2);
 
-        JPanel line3 = new JPanel();
-        line3.add(new JLabel(""));
-
-        mainPanel.add(line3);
-
         container.add(mainPanel, BorderLayout.NORTH);
-        getComponent().add(container);
+
+        return container;
     }
 }
