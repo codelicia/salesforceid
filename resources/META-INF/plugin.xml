@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.malukenho.saleforceid</id>
     <name>Salesforce Id Converter</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <vendor email="malukenho.dev@gmail.com" url="http://github.com/malukenho">Jeferson Nathan</vendor>
 
     <depends>com.intellij.modules.platform</depends>
